@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <p>Calculadora</p>
+    <hr>
+    <div class="col-6">
+     <app-calcular (resultadoEvent)="ResultadoCalculo($event)"></app-calcular>
+    </div>
+    <hr>
+    <div class="col-6">
+      <app-mostrar [resultado]="resultado"></app-mostrar>
+    </div>
+  </div>
+</div>
+

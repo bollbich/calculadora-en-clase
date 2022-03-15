@@ -20,23 +20,36 @@ export class CalcularComponent implements OnInit {
   }
 
   Sumar():void{
-    this.resultado = "El resultado es: "+String(this.num1+this.num2);
-    this.resultadoEvent.emit(this.resultado);
+    if(this.Comprobar())
+    {
+      this.resultado = "El resultado es: "+String(this.num1+this.num2);
+      this.resultadoEvent.emit(this.resultado);
+    }
+
   }
 
   Restar():void{
-    this.resultado = "El resultado es: "+String(this.num1-this.num2);
-    this.resultadoEvent.emit(this.resultado);
+    if(this.Comprobar())
+    {
+      this.resultado = "El resultado es: "+String(this.num1-this.num2);
+      this.resultadoEvent.emit(this.resultado);
+    }
   }
 
   Multiplicar():void{
-    this.resultado = "El resultado es: "+String(this.num1*this.num2);
-    this.resultadoEvent.emit(this.resultado);
+    if(this.Comprobar())
+    {
+      this.resultado = "El resultado es: "+String(this.num1*this.num2);
+      this.resultadoEvent.emit(this.resultado);
+    }
   }
 
   Dividir():void{
-    this.resultado = "El resultado es: "+String(this.num1/this.num2);
-    this.resultadoEvent.emit(this.resultado);
+    if(this.Comprobar())
+    {
+      this.resultado = "El resultado es: "+String(this.num1/this.num2);
+      this.resultadoEvent.emit(this.resultado);
+    }
   }
 
   Limpiar():void{
@@ -44,6 +57,19 @@ export class CalcularComponent implements OnInit {
     this.num2=0;
     this.resultado = "";
     this.resultadoEvent.emit(this.resultado);
+  }
+
+  Comprobar():boolean{
+
+    if((typeof Number === typeof this.num1))
+    {
+          if((typeof Number === typeof this.num2))
+          {
+            return true;
+          }
+          else return false;
+
+    }else return false;
   }
 
 }
